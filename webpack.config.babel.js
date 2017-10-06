@@ -5,10 +5,15 @@ import copy from 'copy-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 
 export default {
-  entry: ['babel-polyfill', path.join(__dirname, './src/index.js')],
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    'babel-polyfill',
+    path.join(__dirname, './src/index.js')
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: '/'
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -59,9 +64,13 @@ export default {
     modules: ['src', 'node_modules']
   },
   plugins: [
-    new extract('index.css'),
+    new extract({
+      filename: 'index.css',
+      disable: process.env.NODE_ENV !== 'production'
+    }),
     new copy([
       { from: './src/index.html' }
-    ])
+    ]),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }

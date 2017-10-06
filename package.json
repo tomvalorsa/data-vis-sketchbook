@@ -8,8 +8,8 @@
     "lint": "eslint src",
     "clean": "rm -rf dist/*",
     "build": "npm run clean && webpack",
-    "build:prod": "npm run clean && npm run projects && webpack --config ./webpack.config.production.babel.js",
-    "dev": "npm run clean && webpack --watch"
+    "build:prod": "npm run clean && webpack --config ./webpack.config.production.babel.js",
+    "dev": "npm run clean && webpack && babel-node server.js"
   },
   "author": "Tom Valorsa (github/tomvalorsa)",
   "license": "UNLICENSED",
@@ -28,9 +28,16 @@
     ]
   },
   "dependencies": {
+    "express": "^4.16.1",
+    "prop-types": "^15.5.10",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
     "autoprefixer": "^7.0.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -40,29 +47,24 @@
     "babel-preset-stage-0": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.1",
-    "eslint": "^4.2.0",
-    "eslint-import-resolver-webpack": "^0.8.3",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.11.2",
-    "postcss-loader": "^2.0.5",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "style-loader": "^0.17.0",
-    "webpack": "^2.5.1"
-  },
-  "devDependencies": {
-    "babel-jest": "^20.0.3",
     "enzyme": "^2.9.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.2",
     "jest": "^20.0.4",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.5",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
-    "sass-variable-loader": "^0.1.2"
+    "sass-variable-loader": "^0.1.2",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1"
   }
 }

@@ -1,15 +1,38 @@
 Basic project skeleton
 
+# Features:
+
+## JS
+
+- React
+- PropTypes
+- Babel
+- ESLint
+
+## Styling
+
+- Sass
+- PostCSS
+
+## Testing
+
+- Jest
+- Enzyme
+
+## Build
+
+- Webpack
+- HMR
+
+
 # Todo:
 
-- hot reloading
+- style lint!
+- common webpack config and dev/prod to extend this
 - app config file which can house stuff to be bundled by webpack with special cases
   - e.g. styles like with angular cli
-- verbose linting rules file
 
-# Stretch goals
-
-- add in linting check pre-commit?
-  - maybe make this optional as it can get annoying
-- optional redux
-- cli prompts like npm init
+- did hot reloading
+- updated react
+- update deps
+- updated readme
