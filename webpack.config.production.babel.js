@@ -1,11 +1,49 @@
 import webpack from 'webpack'
-import config from './webpack.config.babel'
 import path from 'path'
+import extract from 'extract-text-webpack-plugin'
+import autoprefixer from 'autoprefixer'
+import commonConfig from './webpack.config.common.babel'
 
 export default {
-  ...config,
+  ...commonConfig,
+  module: {
+    ...commonConfig.module,
+    rules: [
+      ...commonConfig.module.rules,
+      {
+        test: /\.scss$/,
+        loader: extract.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[path][name]---[local]---[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'sass-loader'
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  autoprefixer()
+                ]
+              }
+            }
+          ]
+        }),
+        include: path.join(__dirname, 'src')
+      }
+    ]
+  },
   plugins: [
-    ...config.plugins,
+    ...commonConfig.plugins,
+    new extract({
+      filename: 'index.css'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
