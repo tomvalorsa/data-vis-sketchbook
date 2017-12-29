@@ -38,5 +38,5 @@ app.get('*', (req, res) => {
 app.listen(3000, 'localhost', err => {
   if (err) return console.log(err)
 
-  console.log('App listening at http://localhost:3000...go do some work')
+  console.log('App listening at http://localhost:3000 go do some work')
 })

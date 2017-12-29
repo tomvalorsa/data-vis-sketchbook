@@ -13,37 +13,32 @@ export default {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               localIdentName: '[path][name]---[local]---[hash:base64:5]'
             }
           },
           {
-            loader: "sass-loader"
+            loader: 'sass-loader'
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [
-                autoprefixer()
-              ]
+              plugins: [autoprefixer()]
             }
           }
         ],
         include: path.join(__dirname, 'src')
-      },
+      }
     ]
   },
   entry: [
     'webpack-hot-middleware/client?reload=true', // Order is important here
     ...commonConfig.entry
   ],
-  plugins: [
-    ...commonConfig.plugins,
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  plugins: [...commonConfig.plugins, new webpack.HotModuleReplacementPlugin()]
 }
