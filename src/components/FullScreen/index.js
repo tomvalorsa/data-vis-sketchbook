@@ -2,7 +2,7 @@ import React from 'react'
 import cls from 'classnames'
 import styles from './index.scss'
 
-const FullScreen = ({ children, center = false }) => {
+const FullScreen = ({ children, backgroundColor, center = false }) => {
   const classes = [styles.fullScreen]
 
   if (center) {
@@ -10,7 +10,7 @@ const FullScreen = ({ children, center = false }) => {
   }
 
   return (
-    <div className={cls(classes)}>
+    <div className={cls(classes)} styles={{ backgroundColor }}>
       {children}
     </div>
   )

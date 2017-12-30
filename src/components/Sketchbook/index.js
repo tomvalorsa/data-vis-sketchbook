@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'react-feather'
 import { Sketches } from '../../const'
 import styles from './index.scss'
 
+import FullScreen from '../FullScreen'
 import DotNav from '../DotNav'
 import Dot from '../Dot'
 
@@ -58,18 +59,18 @@ class Sketchbook extends Component {
     // Can add in any useful props for Sketch in render below
 
     return (
-      <div className={styles.sketchbook}>
+      <FullScreen backgroundColor="#eee" center>
         <ChevronLeft
           className={styles.left}
           size={48}
-          color="#fff"
+          color="#222"
           style={{ display: leftDisplay }}
           onClick={this.cycleLeft}
         />
         <ChevronRight
           className={styles.right}
           size={48}
-          color="#fff"
+          color="#222"
           style={{ display: rightDisplay }}
           onClick={this.cycleRight}
         />
@@ -87,7 +88,7 @@ class Sketchbook extends Component {
             />
           ))}
         </DotNav>
-      </div>
+      </FullScreen>
     )
   }
 }

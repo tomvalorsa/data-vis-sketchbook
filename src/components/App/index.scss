@@ -1,0 +1,11 @@
+.app {
+  position: relative;
+
+  > h1 {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    font-size: 22px;
+  }
+}
