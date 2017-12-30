@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import extract from 'extract-text-webpack-plugin'
 import path from 'path'
 import autoprefixer from 'autoprefixer'
 import commonConfig from './webpack.config.common.babel'
@@ -40,6 +41,9 @@ export default {
   },
   plugins: [
     ...commonConfig.plugins,
+    new extract({
+      filename: 'index.css'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

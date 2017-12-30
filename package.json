@@ -1,6 +1,6 @@
 {
   "name": "data-vis-sketchbook",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Sketches/components of ideas or cool existing stuff to see how it can be made.",
   "main": "index.js",
   "scripts": {
