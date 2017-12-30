@@ -1,7 +1,7 @@
 {
-  "name": "skeleton",
-  "version": "2.1.0",
-  "description": "Basic project skeleton",
+  "name": "data-vis-sketchbook",
+  "version": "1.0",
+  "description": "Sketches/components of ideas or cool existing stuff to see how it can be made.",
   "main": "index.js",
   "scripts": {
     "test": "jest --setupTestFrameworkScriptFile ./src/setupTests.js",

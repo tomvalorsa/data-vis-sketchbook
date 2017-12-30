@@ -11,6 +11,26 @@ class Sketchbook extends Component {
     idx: 0
   }
 
+  componentDidMount() {
+    addEventListener('keyup', this.handleKeyUp)
+  }
+
+  componentWillUnmount() {
+    removeEventListener('keyup', this.handleKeyUp)
+  }
+
+  handleKeyUp = (e) => {
+    const { idx } = this.state
+    // Left
+    if (e.keyCode === 37 && idx > 0) {
+      this.cycleLeft()
+    }
+    // Right
+    if (e.keyCode === 39 && idx < (Sketches.length - 1)) {
+      this.cycleRight()
+    }
+  }
+
   setIdx = (idx) => {
     this.setState({ idx })
   }
