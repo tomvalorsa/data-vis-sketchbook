@@ -1,41 +1,8 @@
-Basic project skeleton
+# Data vis sketchbook
 
-# Features:
+Some quick data vis sketches/components for:
 
-## JS
+- testing ideas
+- trying to build existing stuff that I think looks cool (will link to original where possible!)
 
-- React
-- PropTypes
-- Babel
-- ESLint
-
-## Styling
-
-- Sass
-- PostCSS
-- Stylelint
-
-## Testing
-
-- Jest
-- Enzyme
-
-## Build
-
-- Webpack
-- HMR
-
-## Optional additions (manual)
-
-- Redux
-- React Router
-- Convert `const`, `util`, `propTypes` to folders if necessary
-
----
-
-# Todo:
-
-- app config file which can house stuff to be bundled by webpack with special cases
-  - e.g. styles like with angular cli
-  - could just do this in the common file with an iterable...
-- investigate className hashing and collisions with sass-loader and other style options
+Probably using dummy data.
