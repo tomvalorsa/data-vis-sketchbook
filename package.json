@@ -10,7 +10,8 @@
     "clean": "rm -rf dist/*",
     "build": "npm run clean && webpack",
     "build:prod": "npm run clean && webpack --config ./webpack.config.production.babel.js",
-    "dev": "npm run clean && webpack && babel-node server.js"
+    "dev": "npm run clean && webpack && babel-node server.js",
+    "deploy": "npm run build:prod && gulp deploy"
   },
   "author": "Tom Valorsa (github/tomvalorsa)",
   "license": "UNLICENSED",
@@ -31,6 +32,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "express": "^4.16.1",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
