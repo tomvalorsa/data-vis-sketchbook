@@ -9,6 +9,7 @@ class App extends Component {
       <div className={styles.app}>
         <h1>Data vis sketchbook</h1>
         <Sketchbook />
+        <i className="material-icons">keyboard</i>
       </div>
     )
   }

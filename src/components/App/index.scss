@@ -8,4 +8,11 @@
     z-index: 2;
     font-size: 22px;
   }
+
+  > i {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #222;
+  }
 }
